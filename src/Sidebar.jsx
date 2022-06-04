@@ -5,6 +5,11 @@ function Sidebar() {
   return (
     <div className="sidebar">
       <div className="sidebar__top">
+
+
+
+
+        
         <img src="" alt="" />
         <Avatar className="sidebar__avatar" />
         <h2>Abhishek Dadhich</h2>
