@@ -6,14 +6,13 @@ function Sidebar() {
     <div className="sidebar">
       <div className="sidebar__top">
 
-
-
-
         
         <img src="" alt="" />
         <Avatar className="sidebar__avatar" />
         <h2>Abhishek Dadhich</h2>
         <h4>abhi@gmail.com</h4>
+
+        
       </div>
       <div className="sidebar__stats">
         <div className="sidebar__stat">
