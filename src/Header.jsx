@@ -7,7 +7,24 @@ import SupervisorAccountIcon from "@mui/icons-material/SupervisorAccount";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import ChatIcon from "@mui/icons-material/Chat";
 import NotificationsIcon from "@mui/icons-material/Notifications";
+import { logout } from "./features/userSlice";
+import { auth } from "./firebase";
+import { useDispatch, useSelector } from 'react-redux';
+import { selectUser } from './features/userSlice';
+
 function Header() {
+  const dispatch = useDispatch()
+
+const user = useSelector(selectUser);
+
+
+
+
+const logoutOfApp = ()=>{
+  dispatch(logout())
+  auth.signOut();
+}
+
   return (
     <div className="header">
       <div className="header__left">
@@ -20,18 +37,18 @@ function Header() {
         <div className="header__search">
           {/* Search icon */}
           <SearchIcon />
-          <input type="text" name="" id="" />
+          <input type="text" placeholder="Search" name="" id="" />
         </div>
       </div>
       <div className="header__right">
-        <HeaderOption Icon={HomeIcon} title="Home" />
+        <HeaderOption  Icon={HomeIcon} title="Home" />
 
-        <HeaderOption Icon={SupervisorAccountIcon} title="My Network" />
-        <HeaderOption Icon={BusinessCenterIcon} title="Jobs" />
-        <HeaderOption Icon={ChatIcon} title="Messaging" />
-        <HeaderOption Icon={NotificationsIcon} title="Notifications" />
-        <HeaderOption Icon={NotificationsIcon} title="Notifications" />
-        <HeaderOption avatar src="/static/images/avatar/3.jpg" title="me" />
+        <HeaderOption    Icon={SupervisorAccountIcon} title="My Network" />
+        <HeaderOption   Icon={BusinessCenterIcon} title="Jobs" />
+        <HeaderOption   Icon={ChatIcon} title="Messaging" />
+        <HeaderOption   Icon={NotificationsIcon} title="Notifications" />
+        <HeaderOption   Icon={NotificationsIcon} title="Notifications" />
+        <HeaderOption  onClick={logoutOfApp} avatar= {true} title="Log Out" />
       
       
       
